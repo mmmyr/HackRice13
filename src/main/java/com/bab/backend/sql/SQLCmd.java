@@ -35,4 +35,12 @@ public class SQLCmd {
                 .WHERE("username = #{username}")
                 .toString();
     }
+    public String getSleepCreateDate(){
+        return new SQL()
+                .SELECT("create_date")
+                .FROM("sleep")
+                .WHERE("uid = #{uid}")
+                .toString();
+    }
+
 }

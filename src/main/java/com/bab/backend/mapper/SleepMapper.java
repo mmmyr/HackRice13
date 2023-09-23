@@ -11,4 +11,9 @@ public interface SleepMapper {
     @SelectProvider(type = SQLCmd.class, method = "initSleep")
     void initSleep(int uid, Date create_date);
 
+    @SelectProvider(type = SQLCmd.class, method = "getSleepCreateDate")
+    Date getSleepCreateDate(int uid);
+
+
+
 }

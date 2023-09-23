@@ -2,10 +2,7 @@ package com.bab.backend.controller;
 
 import com.bab.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -15,7 +12,7 @@ public class UserController {
 
     @GetMapping()
     public String connT(){
-        return "connected";
+        return "index";
     }
 
     @GetMapping("/getUID")
@@ -30,5 +27,12 @@ public class UserController {
             throw new RuntimeException(e);
         }
     }
+
+
+//    @PostMapping("/setPassword")
+//    @ResponseBody
+//    public void setUserPassword(String username, String password){
+//        userService.setPassword(username, password);
+//    }
 
 }

@@ -1,0 +1,41 @@
+.RadialProgress {
+  --hue: 220;
+  --holesize: 65%;
+  --track-bg: hsl(233, 34%, 92%);
+  --progress: 10deg;
+
+  height: 50vmin;
+  background:conic-gradient(#7d2ae8 10deg, #ededed 0deg);
+  border-radius: 50%;
+  width: 50vmin;
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+  font-weight: 700;
+  font-size: max(10vmin, 1.4rem)
+}
+
+.RadialProgress::before {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  height: 210px;
+  width: 210px;
+  border-radius: 50%;
+}
+
+.progress-value {
+  position: relative;
+}
+
+
+
+input[type="range"] {
+  width: 320px;
+  margin: 0 auto;
+}
