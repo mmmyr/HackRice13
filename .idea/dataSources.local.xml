@@ -18,5 +18,11 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="@78.138.46.223" uuid="38d5596e-0c36-4ca9-9cae-62af5110cb5a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
