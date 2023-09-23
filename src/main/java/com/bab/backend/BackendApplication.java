@@ -1,6 +1,7 @@
 package com.bab.backend;
 
 import com.bab.backend.entity.User;
+import com.bab.backend.mapper.SleepMapper;
 import com.bab.backend.mapper.UserMapper;
 import com.bab.backend.service.UserService;
 import org.apache.ibatis.io.Resources;
@@ -12,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Date;
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -23,10 +26,13 @@ public class BackendApplication {
 //        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
 //
-//        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-//        User ada = userMapper.getUser("ada");
-//        System.out.println(ada.getPassword());
+////        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+////        User ada = userMapper.getUser("ada");
+////        System.out.println(ada.getPassword());
 //
+//        SleepMapper sleepMapper = sqlSession.getMapper(SleepMapper.class);
+//        Date localDate = Date.valueOf(LocalDate.now());
+//        sleepMapper.initSleep(1, localDate);
 //
 //
 //        sqlSession.close();

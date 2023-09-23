@@ -3,18 +3,19 @@ package com.bab.backend.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
 import java.sql.Date;
+import java.util.List;
+import java.util.Map;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
+@AllArgsConstructor
+public class Sleep {
+    int tid;
     int uid;
-    String username;
-    String password;
+    List<Map<Integer,Integer>> score;
+    Date create_date;
 
 
 }

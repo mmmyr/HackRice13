@@ -20,6 +20,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
     }
 
+    @Test
+   void getUid(){
+       int adaId = userService.userGetUid("ada");
+        System.out.println(adaId);
+    }
+
 
 
 }

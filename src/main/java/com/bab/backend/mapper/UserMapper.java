@@ -10,4 +10,10 @@ public interface UserMapper {
 
     @SelectProvider(type = SQLCmd.class, method = "getUser")
     User getUser(String username);
+
+    @SelectProvider(type = SQLCmd.class, method = "userGetUid")
+    int userGetUid(String username);
+
+
+
 }

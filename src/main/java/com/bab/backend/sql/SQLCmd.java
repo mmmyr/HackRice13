@@ -11,4 +11,28 @@ public class SQLCmd {
                 .WHERE("username = #{username}")
                 .toString();
     }
+
+    public String userGetUid(){
+        return new SQL()
+                .SELECT("uid")
+                .FROM("user")
+                .WHERE("username = #{username}")
+                .toString();
+    }
+
+    public String initSleep(){
+        return new SQL()
+                .INSERT_INTO("sleep")
+                .INTO_COLUMNS("uid","create_date")
+                .INTO_VALUES("#{uid}", "#{create_date}")
+                .toString();
+    }
+
+    public String getSleepUid(){
+        return new SQL()
+                .SELECT("uid")
+                .FROM("sleep")
+                .WHERE("username = #{username}")
+                .toString();
+    }
 }
