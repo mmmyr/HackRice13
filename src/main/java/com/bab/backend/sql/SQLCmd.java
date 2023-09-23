@@ -43,4 +43,22 @@ public class SQLCmd {
                 .toString();
     }
 
+    public String sleepUpdate(){
+        return new SQL()
+                .INSERT_INTO("sleep")
+                .INTO_COLUMNS("score")
+                .INTO_VALUES("newScore")
+                .toString();
+    }
+
+    public String insertSleepData(){
+        return new SQL()
+                .INSERT_INTO("ada_sleep_table")
+                .INTO_COLUMNS("score", "ans_date")
+                .INTO_VALUES("#{score}","#{ans_date}")
+                .toString();
+    }
+
+
+
 }

@@ -5,17 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.util.List;
-import java.util.Map;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sleep {
-    int tid;
-    int uid;
-    int score;
-    Date create_date;
-
-
+public class Mood {
+    private int id;
+    private int score;
+    private Date date;
 }

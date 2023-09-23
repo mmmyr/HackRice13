@@ -18,4 +18,14 @@ public class SleepServiceImpl implements SleepService {
     public Date getCreateDate(int uid) {
         return sleepMapper.getSleepCreateDate(uid);
     }
+
+    @Override
+    public void createTable(String tableName) {
+        sleepMapper.createTable(tableName);
+    }
+
+    @Override
+    public void insertSleepData(int score, Date date) {
+        sleepMapper.insertSleepData(score, date);
+    }
 }

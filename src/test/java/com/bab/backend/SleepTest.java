@@ -22,4 +22,21 @@ public class SleepTest {
         Date newAdaDate = Date.valueOf(newDate);
         System.out.println(newAdaDate);
     }
+
+    @Test
+    void genSleep(){
+        sleepService.createTable("Ada_Sleep_Table");
+    }
+
+    @Test
+    void setSleepDate(){
+        LocalDate curLocalDate = LocalDate.now();
+        Date curDate = Date.valueOf(curLocalDate);
+        sleepService.insertSleepData(2,curDate);
+    }
+
+    @Test
+    void genMood(){
+        return;
+    }
 }
