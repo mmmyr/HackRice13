@@ -5,7 +5,8 @@ async function handleClick() {
     try {
 
         console.log("sent Request!"); // Handle the received data as needed
-        const response = await fetch('/user/getWeeklySleepData', {method: 'GET'});
+        const response = await fetch('http://localhost:8080/user/getWeeklySleepData',
+            {method: 'GET'});
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
