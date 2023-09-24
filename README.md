@@ -1,2 +1,2 @@
-# HackRice13
+# WellSpec
 HackRice Project
