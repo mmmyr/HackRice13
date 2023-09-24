@@ -2,17 +2,26 @@ package com.bab.backend.controller;
 
 import com.bab.backend.dto.NumberDTO;
 import com.bab.backend.entity.Sleep;
+import com.bab.backend.service.MoodService;
 import com.bab.backend.service.SleepService;
 import com.bab.backend.service.UserService;
+import com.bab.backend.service.WellnessService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-@RestController
+//@Controller
+@Controller
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/user")
+
 public class UserController {
     @Autowired
     UserService userService;
@@ -20,10 +29,35 @@ public class UserController {
     @Autowired
     SleepService sleepService;
 
-    @GetMapping()
+    @Autowired
+    MoodService moodService;
+
+    @Autowired
+    WellnessService wellnessService;
+
+    @GetMapping("")
+    public String Login(){
+        return "login";
+    }
+
+    @GetMapping("correct")
     public String connT(){
         return "index";
     }
+
+    @GetMapping("/SleepPage")
+    public String sleepPage(){
+        return "Sleep";
+    }
+    @GetMapping("/MoodPage")
+    public String MoodPage(){
+        return "Mental";
+    }
+    @GetMapping("/WellnessPage")
+    public String wellnessPage(){
+        return "Physical";
+    }
+
 
     @GetMapping("/getUID")
     @ResponseBody
@@ -41,25 +75,45 @@ public class UserController {
     @PostMapping("/saveSleepData")
     @ResponseBody
     public void insertSleepData(@RequestBody Integer score){
-        System.out.println("received request");
-        System.out.println(score);
-
-//        System.out.println(numberDTO);
-//
         LocalDate curLocalDate = LocalDate.now();
         Date curDate = Date.valueOf(curLocalDate);
-//
-//        int score = numberDTO.getValue();
         sleepService.insertSleepData(score, curDate);
+    }
 
+    @PostMapping("/saveMoodData")
+    @ResponseBody
+    public void insertMoodData(@RequestBody Integer score){
+        LocalDate curLocalDate = LocalDate.now();
+        Date curDate = Date.valueOf(curLocalDate);
+        moodService.insertMoodData(score, curDate);
+    }
 
+    @PostMapping("/saveWellnessData")
+    @ResponseBody
+    public void insertWellnessData(@RequestBody Integer score){
+        LocalDate curLocalDate = LocalDate.now();
+        Date curDate = Date.valueOf(curLocalDate);
+        wellnessService.insertWellnessData(score, curDate);
     }
 
 
-//    @PostMapping("/setPassword")
-//    @ResponseBody
-//    public void setUserPassword(String username, String password){
-//        userService.setPassword(username, password);
-//    }
+    @GetMapping("/getWeeklySleepData")
+    @ResponseBody
+    public List<Integer> getWeeklySleepData(){
+        List<Integer> sleepWList = sleepService.getSleepData(7).stream()
+                .map(Sleep::getScore)
+                .collect(Collectors.toList());
+        System.out.println(sleepWList);
+        return sleepWList;
+    }
+
+    @GetMapping("/getMonthlySleepData")
+    @ResponseBody
+    public List<Integer> getMonthlySleepData() {
+
+        return sleepService.getSleepData(30).stream()
+                .map(Sleep::getScore)
+                .collect(Collectors.toList());
+    }
 
 }

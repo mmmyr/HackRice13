@@ -1,6 +1,8 @@
 package com.bab.backend;
 
+import com.bab.backend.service.MoodService;
 import com.bab.backend.service.SleepService;
+import com.bab.backend.service.WellnessService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,15 +14,14 @@ import java.time.LocalDate;
 public class SleepTest {
     @Autowired
     SleepService sleepService;
+
+    @Autowired
+    MoodService moodService;
+
+    @Autowired
+    WellnessService wellnessService;
     @Test
     void PlayDate(){
-        Date adaDate = sleepService.getCreateDate(1);
-        System.out.println(adaDate);
-        LocalDate newDate = adaDate.toLocalDate();
-        newDate.plusDays(2);
-        System.out.println(newDate);
-        Date newAdaDate = Date.valueOf(newDate);
-        System.out.println(newAdaDate);
     }
 
     @Test
@@ -37,6 +38,11 @@ public class SleepTest {
 
     @Test
     void genMood(){
-        return;
+        moodService.createTable("ada_mood_table");
+    }
+
+    @Test
+    void genWellness(){
+        wellnessService.createTable("ada_wellness_table");
     }
 }

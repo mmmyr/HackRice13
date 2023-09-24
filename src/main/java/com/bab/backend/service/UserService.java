@@ -8,5 +8,7 @@ public interface UserService {
 
     int userGetUid(String username);
 
+    void registerUser(String username, String password);
+
 
 }
