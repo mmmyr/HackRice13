@@ -7,7 +7,7 @@ const setProgress = (progress) => {
     value = `${progress}%`;
     let angleDegree = value + "deg";
     progressValue.textContent = `${progress}%`
-    radialProgress.style.background = `conic-gradient(#7d2ae8 ${progress*3.6}deg, #ededed 0deg) `
+    radialProgress.style.background = `conic-gradient(#2ecc71cd  ${progress*3.6}deg, #ededed 0deg) `
     //radialProgress.innerHTML = value
     radialProgress.setAttribute('aria-valuenow', value)
 }
@@ -28,17 +28,12 @@ document.getElementById('saveMentalBtn').addEventListener('click', function () {
             'Content-Type': 'application/json',
         },
         body: intValue
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to save data');
-            }
-            // Once data is saved successfully, redirect to MoodPage
-
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-
-    console.log("finish store data");
+        .then(data => console.log(data))
+        .catch(error => console.log('Fetch error: ' + error.message));
 });

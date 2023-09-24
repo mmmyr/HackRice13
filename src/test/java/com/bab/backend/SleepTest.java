@@ -45,4 +45,9 @@ public class SleepTest {
     void genWellness(){
         wellnessService.createTable("ada_wellness_table");
     }
+
+    @Test
+    void getDate(){
+//        var data = moodService.getMoodData();
+    }
 }

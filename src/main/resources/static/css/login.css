@@ -1,11 +1,54 @@
 /* frm.css */
-
+.prompt {
+    margin-left: 25%;
+    font-size: xxx-large;
+    font-family: Cursive;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+
 }
+.custom-input {
+    font-size: 16px;                   /* Adjust the font size */
+    padding-left: 20%;                     /* Padding inside the input */
+    width: 60%;                       /* Take full width of the parent container */
+    height: 30px;
+    border: 1px solid #ccc;            /* Border color */
+    border-radius: 5px;                /* Rounded corners */
+    margin-bottom: 10px;               /* Spacing between input fields */
+    outline: none;                     /* Remove the browser's default outline */
+    transition: border 0.3s;           /* Smooth transition for border changes */
+}
+
+.custom-input:focus {
+
+    border-color: #7d2ae8;             /* Change border color when input is focused */
+}
+
+.custom-input::placeholder {
+    color: #888;                      /* Placeholder text color */
+    font-style: italic;                /* Make placeholder text italic */
+}
+
+.large-button {
+    margin-top: 10%;
+    margin-left: 45%;
+    font-size: 20px;           /* Increase font size */
+    padding: 15px 30px;        /* Add more padding: 15px top/bottom, 30px left/right */
+    width: 150px;              /* Optional: Directly set the width */
+    height: 60px;              /* Optional: Directly set the height */
+    border-radius: 5px;        /* Optional: Round the corners a bit */
+    cursor: pointer;           /* Change cursor to a hand when hovering over the button */
+    transition: 0.3s;          /* Optional: Smooth transition for hover effects */
+}
+
+.large-button:hover {
+    background-color: #ddd;   /* Optional: Change color when hovered for better UX */
+}
+
 
 #loginDiv {
     width: 300px;

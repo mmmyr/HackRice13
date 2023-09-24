@@ -7,7 +7,7 @@ const setProgress = (progress) => {
     value = `${progress}%`;
     let angleDegree = value + "deg";
     progressValue.textContent = `${progress}%`
-    radialProgress.style.background = `conic-gradient(#7d2ae8 ${progress*3.6}deg, #ededed 0deg) `
+    radialProgress.style.background = `conic-gradient(#e67e22 ${progress*3.6}deg, #ededed 0deg) `
     //radialProgress.innerHTML = value
     radialProgress.setAttribute('aria-valuenow', value)
 }

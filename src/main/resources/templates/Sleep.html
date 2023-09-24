@@ -6,23 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Template</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add your CSS links here -->
     <link rel="stylesheet" href="/css/Sleep.css" />
 </head>
 
 <body>
 
-    <div class="SleepProgress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-        <span class="progress-value"> 0% </span>
-    </div>
+<div class = "prompt">RATE YOUR SLEEP QUALITY</div>
 
-    <input type="range" value="25" min="0" max="100" />
+<div class="SleepProgress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <span class="progress-value"> 0% </span>
+</div>
 
-    <button id="saveSleepBtn">Confirm</button>
+<input type="range" value="25" min="0" max="100" />
 
-    <script src= "/js/Sleep.js"> </script>
+<button id="saveSleepBtn" class="btn btn-primary btn-lg sleepSaveBtn">Confirm</button>
+
+<a href="/user/MoodPage" class="btn btn-danger btn-lg nxt" id="nextButton">Next</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src= "/js/Sleep.js"> </script>
 
 </body>
 
 </html>
-

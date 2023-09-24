@@ -154,5 +154,21 @@ public class UserController {
                 .map(Sleep::getScore)
                 .collect(Collectors.toList());
     }
+    @GetMapping("/getMonthlyMoodData")
+    @ResponseBody
+    public List<Integer> getMonthlyMoodData() {
+
+        return moodService.getMoodData(this.UserName,30).stream()
+                .map(Mood::getScore)
+                .collect(Collectors.toList());
+    }
+    @GetMapping("/getMonthlyWellnessData")
+    @ResponseBody
+    public List<Integer> getMonthlyWellnessData() {
+
+        return wellnessService.getWellnessData(this.UserName,30).stream()
+                .map(Wellness::getScore)
+                .collect(Collectors.toList());
+    }
 
 }
