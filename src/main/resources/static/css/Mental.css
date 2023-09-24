@@ -58,7 +58,12 @@
     position: absolute;
 }
 
-
+.nxt{
+    position: fixed;   /* Fixed positioning */
+    top: 50%;          /* Center vertically */
+    right: 10px;       /* 10 pixels from the right side */
+    transform: translateY(-50%);  /* Offset vertically to ensure it's perfectly centered */
+}
 
 input[type="range"] {
     background: aquamarine ;
