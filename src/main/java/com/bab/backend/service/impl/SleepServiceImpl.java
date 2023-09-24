@@ -19,18 +19,24 @@ public class SleepServiceImpl implements SleepService {
 
     @Override
     public void createTable(String tableName) {
-        if (sleepMapper.getTableNameIfExists() == null){
+        if (sleepMapper.getTableNameIfExists(tableName) == null){
             sleepMapper.createTable(tableName);
+        } else {
+            System.out.println("tables already exists");
         }
     }
 
     @Override
-    public void insertSleepData(int score, Date date) {
-        sleepMapper.insertSleepData(score, date);
+    public void insertSleepData(String username, int score, Date date) {
+        sleepMapper.insertSleepData(username, score, date);
     }
 
     @Override
-    public List<Sleep> getSleepData(int days) {
-        return sleepMapper.getSleepData(days);
+    public List<Sleep> getSleepData(String username, int days) {
+        return sleepMapper.getSleepData(username, days);
     }
+
+
+
+
 }

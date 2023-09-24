@@ -13,4 +13,10 @@ public class RegisterTest {
     void registerTest(){
         userService.registerUser("Benson", "Ning");
     }
+
+    @Test
+    void TestPa(){
+        String passw = userService.getPassword("Benson");
+        System.out.println(passw);
+    }
 }

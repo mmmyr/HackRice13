@@ -26,15 +26,15 @@ public class SleepTest {
 
     @Test
     void genSleep(){
-        sleepService.createTable("Ada_Sleep_Table");
+        sleepService.createTable("Benson");
     }
 
-    @Test
-    void setSleepDate(){
-        LocalDate curLocalDate = LocalDate.now();
-        Date curDate = Date.valueOf(curLocalDate);
-        sleepService.insertSleepData(2,curDate);
-    }
+//    @Test
+//    void setSleepDate(){
+//        LocalDate curLocalDate = LocalDate.now();
+//        Date curDate = Date.valueOf(curLocalDate);
+//        sleepService.insertSleepData("Bruce",2,curDate);
+//    }
 
     @Test
     void genMood(){

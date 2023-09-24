@@ -17,7 +17,7 @@ controller.oninput = () => {
     setProgress(controller.value)
 }
 
-document.getElementById('saveSleepBtn').addEventListener('click', function () {
+document.getElementById('saveSleepBtn').addEventListener('click', function(){
     console.log("sent request!");
     console.log(value);
     let intValue = parseInt(value.slice(0, -1));
@@ -36,4 +36,5 @@ document.getElementById('saveSleepBtn').addEventListener('click', function () {
     })
         .then(data => console.log(data))
         .catch(error => console.log('Fetch error: ' + error.message));
+
 });

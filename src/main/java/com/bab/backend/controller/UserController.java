@@ -1,30 +1,29 @@
 package com.bab.backend.controller;
 
-import com.bab.backend.dto.NumberDTO;
+
+import com.bab.backend.entity.Mood;
 import com.bab.backend.entity.Sleep;
+import com.bab.backend.entity.Wellness;
 import com.bab.backend.service.MoodService;
 import com.bab.backend.service.SleepService;
 import com.bab.backend.service.UserService;
 import com.bab.backend.service.WellnessService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//@Controller
+
 @Controller
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/user")
 
 public class UserController {
 
-    private String UserName;
+    private String UserName = "Bruce";
 
     @Autowired
     UserService userService;
@@ -43,13 +42,26 @@ public class UserController {
         return "login";
     }
 
-    @GetMapping("authorize")
-    String authorize(@RequestBody String username, String password){
+    @GetMapping("/getPassword")
+    @ResponseBody
+    String getPassword(@RequestParam String username){
+        String password = userService.getPassword(username);
+        System.out.println(password);
+        return password;
+    }
+
+    @PostMapping("authorize")
+
+    String authorize(@RequestParam String username, @RequestParam String password){
+
         String retrievedPassword = userService.getPassword(username);
-        if(retrievedPassword != null & retrievedPassword == password) {
+        if (retrievedPassword != null && retrievedPassword.equals(password)) {
             this.UserName = username;
+            return "Sleep";
+        } else {
+            return "login";
         }
-        return "Sleep";
+
     }
 
     @GetMapping("correct")
@@ -59,37 +71,29 @@ public class UserController {
 
     @GetMapping("/SleepPage")
     public String sleepPage(){
+        sleepService.createTable(this.UserName);
         return "Sleep";
     }
     @GetMapping("/MoodPage")
     public String MoodPage(){
+        moodService.createTable(this.UserName);
         return "Mental";
     }
     @GetMapping("/WellnessPage")
     public String wellnessPage(){
+        wellnessService.createTable(this.UserName);
         return "Physical";
     }
 
 
-    @GetMapping("/getUID")
-    @ResponseBody
-    public int userGetUid(String username) {
-        try {
-            int uid = userService.userGetUid(username);
-            System.out.println("uid fetched, "+ uid);
-            return uid;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw new RuntimeException(e);
-        }
-    }
 
     @PostMapping("/saveSleepData")
     @ResponseBody
     public void insertSleepData(@RequestBody Integer score){
         LocalDate curLocalDate = LocalDate.now();
         Date curDate = Date.valueOf(curLocalDate);
-        sleepService.insertSleepData(score, curDate);
+        sleepService.insertSleepData(this.UserName, score, curDate);
+
     }
 
     @PostMapping("/saveMoodData")
@@ -97,7 +101,8 @@ public class UserController {
     public void insertMoodData(@RequestBody Integer score){
         LocalDate curLocalDate = LocalDate.now();
         Date curDate = Date.valueOf(curLocalDate);
-        moodService.insertMoodData(score, curDate);
+        moodService.insertMoodData(this.UserName,score, curDate);
+
     }
 
     @PostMapping("/saveWellnessData")
@@ -105,25 +110,47 @@ public class UserController {
     public void insertWellnessData(@RequestBody Integer score){
         LocalDate curLocalDate = LocalDate.now();
         Date curDate = Date.valueOf(curLocalDate);
-        wellnessService.insertWellnessData(score, curDate);
+        wellnessService.insertWellnessData(this.UserName, score, curDate);
     }
 
 
     @GetMapping("/getWeeklySleepData")
     @ResponseBody
     public List<Integer> getWeeklySleepData(){
-        List<Integer> sleepWList = sleepService.getSleepData(7).stream()
+        List<Integer> sleepWList = sleepService.getSleepData(this.UserName, 7).stream()
                 .map(Sleep::getScore)
                 .collect(Collectors.toList());
         System.out.println(sleepWList);
         return sleepWList;
     }
 
+    @GetMapping("/getWeeklyMoodData")
+    @ResponseBody
+    public List<Integer> getWeeklyMoodData(){
+        List<Integer> moodWList = moodService.getMoodData(this.UserName, 7).stream()
+                .map(Mood::getScore)
+                .collect(Collectors.toList());
+        System.out.println(moodWList);
+        return moodWList;
+    }
+
+    @GetMapping("/getWeeklyWellnessData")
+    @ResponseBody
+    public List<Integer> getWeeklyWellnessData(){
+        List<Integer> wellWList = wellnessService.getWellnessData(this.UserName, 7).stream()
+                .map(Wellness::getScore)
+                .collect(Collectors.toList());
+        System.out.println(wellWList);
+        return wellWList;
+    }
+
+
+
     @GetMapping("/getMonthlySleepData")
     @ResponseBody
     public List<Integer> getMonthlySleepData() {
 
-        return sleepService.getSleepData(30).stream()
+        return sleepService.getSleepData(this.UserName,30).stream()
                 .map(Sleep::getScore)
                 .collect(Collectors.toList());
     }

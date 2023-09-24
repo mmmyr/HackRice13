@@ -28,12 +28,17 @@ document.getElementById('saveMentalBtn').addEventListener('click', function () {
             'Content-Type': 'application/json',
         },
         body: intValue
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
     })
-        .then(data => console.log(data))
-        .catch(error => console.log('Fetch error: ' + error.message));
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to save data');
+            }
+            // Once data is saved successfully, redirect to MoodPage
+
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+
+    console.log("finish store data");
 });

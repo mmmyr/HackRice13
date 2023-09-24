@@ -9,7 +9,8 @@ public interface SleepService {
 
     void createTable(String tableName);
 
-    void insertSleepData(int score, Date date);
+    void insertSleepData(String username, int score, Date date);
 
-    List<Sleep> getSleepData(int days);
+    List<Sleep> getSleepData(String username, int days);
+
 }

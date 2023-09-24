@@ -1,8 +1,11 @@
 package com.bab.backend.mapper;
 
+import com.bab.backend.entity.Sleep;
 import com.bab.backend.entity.User;
 import com.bab.backend.sql.SQLCmd;
 import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -17,7 +20,7 @@ public interface UserMapper {
     void registerUser(@Param("username") String username, @Param("password") String password);
 
     @Select("SELECT password FROM users WHERE username = #{username}")
-    String getPassword(@Param("password") String password);
+    String getPassword(@Param("username") String username);
 
 
 
