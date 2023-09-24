@@ -3,22 +3,21 @@ import Line from './components/Line';
 import FetchButton from './components/FetchButton';
 import './App.css';
 
-var fetchedWeekData; 
-var fetchedMonthData;
-
-function handleFetchedData(data) {
-  console.log("Data in Parent Component:", data);
-  fetchedWeekData = data; 
-  // You can now set this data to state or use it as required
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      monthdata: null,
+      weekdata: null
     }
   }
+
+  setData = (monthData, weekData) => {
+    this.setState({ monthdata: monthData });
+    this.setState({weekdata: weekData});
+  }
+
   componentDidMount() {
     const url = "https://jsonplaceholder.typicode.com/posts";
     fetch(url)
@@ -26,18 +25,22 @@ class App extends Component {
       .then(json => this.setState({ posts: json }))
   }
   render() {
+    
+    
     return (
       <div>
-        <FetchButton onFetch={handleFetchedData} />
-        <h2 className="weekly-headline">Monthly Data</h2>
+        <FetchButton setData={this.setData} />
+        <h2 className="monthly-headline">Monthly Data</h2>
         <Line
           xData={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
-          yData={fetchedWeekData}
+          yData={this.state.weekdata}
         />
         <h2 className="monthly-headline">Monthly Data</h2>
         <Line
-          xData={['Jan', 'Feb', 'Mar', 'Apr', 'May']}
-          yData={[100, 200, 150, 175, 225]}
+          xData={['09/01', '09/02', '09/03', '09/04', '09/05', '09/01', '09/02', '09/03', '09/04', '09/05', '09/01', '09/8', '09/9', '09/10', '09/11',
+            '09/01', '09/02', '09/03', '09/12', '09/13', '09/14', '09/15', '09/16', '09/17', '09/18', '09/19', '09/20', '09/21', '09/22', '09/23'
+          ]}
+          yData={this.state.monthdata}
         />
       </div>
       
