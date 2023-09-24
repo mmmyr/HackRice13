@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91ba3cb-58d7-439b-bade-87cf5e64cba8" name="Changes" comment="html ok">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/dto/NumberDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/entity/Mood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/mapper/MoodMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/utils/JsonTypeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/mapper/MoodMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Mental.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Mental.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Mental.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Physical.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Physical.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Physical.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Sleep.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/219d3748-813f-40ca-914e-862133751bc4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/219d3748-813f-40ca-914e-862133751bc4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/entity/Sleep.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/entity/Sleep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/mapper/SleepMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/mapper/SleepMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/service/SleepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/service/SleepService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/service/impl/SleepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/service/impl/SleepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/sql/SQLCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/bab/backend/sql/SQLCmd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/mapper/SleepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/mapper/SleepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/bab/backend/SleepTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/bab/backend/SleepTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Sleep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Sleep.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +30,23 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectId" id="2VnxoY2L4hnDJ1R2eQ2RUyWqo5a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,14 +55,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "frontend",
     "jdk.selected.JAVA_MODULE": "corretto-20",
     "last_opened_file_path": "D:/hackathon/HackRice13/backend/src/main/resources/mapper",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,39 +97,7 @@
       <recent name="com.bab.backend.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
-    <configuration name="BackendApplicationTests.getUid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bab.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bab.backend" />
-      <option name="MAIN_CLASS_NAME" value="com.bab.backend.BackendApplicationTests" />
-      <option name="METHOD_NAME" value="getUid" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SleepTest.PlayDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bab.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bab.backend" />
-      <option name="MAIN_CLASS_NAME" value="com.bab.backend.SleepTest" />
-      <option name="METHOD_NAME" value="PlayDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.Mental.html">
     <configuration name="SleepTest.genSleep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -165,6 +130,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Mental.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HackRice13/frontend/Mental.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Physical.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HackRice13/frontend/Physical.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Sleep.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HackRice13/frontend/Sleep.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HackRice13/backend/src/main/resources/templates/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -177,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Mental.html" />
+        <item itemvalue="JavaScript Debug.Sleep.html" />
+        <item itemvalue="JavaScript Debug.Physical.html" />
         <item itemvalue="JUnit.SleepTest.setSleepDate" />
         <item itemvalue="JUnit.SleepTest.genSleep" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JUnit.SleepTest.PlayDate" />
-        <item itemvalue="JUnit.BackendApplicationTests.getUid" />
       </list>
     </recent_temporary>
   </component>
@@ -194,6 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695485820858</updated>
       <workItem from="1695485821882" duration="24250000" />
+      <workItem from="1695513972717" duration="2744000" />
     </task>
     <task id="LOCAL-00001" summary="sql basics">
       <created>1695489789389</created>
