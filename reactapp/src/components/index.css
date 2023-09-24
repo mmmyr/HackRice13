@@ -1,0 +1,40 @@
+/* index.css */
+
+.fetch-button {
+    /* Dimensions */
+    padding: 10px 20px;
+    font-size: 16px;
+
+    /* Colors */
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+
+    /* Borders */
+    border: none;
+    border-radius: 5px;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Other Styles */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+
+    /* Position (example: centering it on the screen) */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fetch-button:hover {
+    background-color: #45a049;
+    /* Darker green when hovered */
+}
+
+.fetch-button:active {
+    background-color: #2d7031;
+    /* Even darker green when button is active (clicked) */
+}

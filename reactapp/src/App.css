@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+/* Styles for the Weekly Data headline */
+.weekly-headline {
+  font-size: 24px;
+  /* Set font size */
+  color: #3498db;
+  /* Set font color */
+  text-align: center;
+  /* Center the headline */
+  margin-bottom: 10px;
+  /* Add some space below the headline */
+  font-weight: bold;
+  /* Make the text bold */
+}
+
+/* Styles for the Monthly Data headline */
+.monthly-headline {
+  font-size: 24px;
+  /* Set font size */
+  color: #e74c3c;
+  /* Set font color */
+  text-align: center;
+  /* Center the headline */
+  margin-bottom: 10px;
+  /* Add some space below the headline */
+  font-style: italic;
+  /* Make the text italic */
+}

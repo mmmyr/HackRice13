@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 async function handleClick() {
     try {
@@ -20,7 +21,7 @@ async function handleClick() {
 
 function FetchButton() {
     return (
-        <button onClick={handleClick}>
+        <button className="fetch-button" onClick={handleClick}>
             Fetch Data
         </button>
     );
