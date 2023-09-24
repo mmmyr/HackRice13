@@ -7,7 +7,7 @@ public class SQLCmd {
     public String getUser(){
         return new SQL()
                 .SELECT("*")
-                .FROM("user")
+                .FROM("users")
                 .WHERE("username = #{username}")
                 .toString();
     }
@@ -15,7 +15,7 @@ public class SQLCmd {
     public String userGetUid(){
         return new SQL()
                 .SELECT("uid")
-                .FROM("user")
+                .FROM("users")
                 .WHERE("username = #{username}")
                 .toString();
     }

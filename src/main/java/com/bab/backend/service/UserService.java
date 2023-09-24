@@ -10,5 +10,7 @@ public interface UserService {
 
     void registerUser(String username, String password);
 
+    String getPassword(String username);
+
 
 }

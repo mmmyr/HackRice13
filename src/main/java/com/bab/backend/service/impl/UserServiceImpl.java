@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
     public void registerUser(String username, String password) {
         userMapper.registerUser(username, password);
     }
+
+    @Override
+    public String getPassword(String username) {
+        return userMapper.getPassword(username);
+    }
 }

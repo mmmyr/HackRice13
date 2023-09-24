@@ -23,6 +23,9 @@ import java.util.stream.Collectors;
 @RequestMapping("/user")
 
 public class UserController {
+
+    private String UserName;
+
     @Autowired
     UserService userService;
 
@@ -38,6 +41,15 @@ public class UserController {
     @GetMapping("")
     public String Login(){
         return "login";
+    }
+
+    @GetMapping("authorize")
+    String authorize(@RequestBody String username, String password){
+        String retrievedPassword = userService.getPassword(username);
+        if(retrievedPassword != null & retrievedPassword == password) {
+            this.UserName = username;
+        }
+        return "Sleep";
     }
 
     @GetMapping("correct")
