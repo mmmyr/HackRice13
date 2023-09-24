@@ -3,6 +3,15 @@ import Line from './components/Line';
 import FetchButton from './components/FetchButton';
 import './App.css';
 
+var fetchedWeekData; 
+var fetchedMonthData;
+
+function handleFetchedData(data) {
+  console.log("Data in Parent Component:", data);
+  fetchedWeekData = data; 
+  // You can now set this data to state or use it as required
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +28,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <FetchButton />
-        <h2 className="weekly-headline">Weekly Data</h2>
+        <FetchButton onFetch={handleFetchedData} />
+        <h2 className="weekly-headline">Monthly Data</h2>
         <Line
           xData={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
-          yData={[13, 230, 224, 218, 135, 147, 260]}
+          yData={fetchedWeekData}
         />
         <h2 className="monthly-headline">Monthly Data</h2>
         <Line

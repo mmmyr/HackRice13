@@ -14,12 +14,17 @@ async function handleClick() {
         const data = await response.json();
         console.log("data"); // Handle the received data as needed
         console.log(data); // Handle the received data as needed
+
+        if (this.props.onFetch) {
+            this.props.onFetch(data);
+        }
+
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error.message);
     }
 }
 
-function FetchButton() {
+function FetchButton(props) {
     return (
         <button className="fetch-button" onClick={handleClick}>
             Fetch Data
