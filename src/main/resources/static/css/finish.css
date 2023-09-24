@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60%;  /* increased the width for larger screens */
+    max-width: 1200px; /* increased the maximum width for very large screens */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 80px;  /* increased padding for larger screens */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3em;  /* increased font size for larger screens */
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+button {
+    padding: 20px 30px; /* increased padding for larger screens */
+    font-size: 22px; /* increased font size for larger screens */
+    cursor: pointer;
+    margin-top: 40px;  /* increased margin-top for larger screens */
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+p {
+    font-size: 24px;  /* increased font size for larger screens */
+    font-family: Cursive;
+    margin-top: 40px;  /* increased margin-top for larger screens */
+    line-height: 1.7;  /* increased line-height for better readability */
+    background-color: #eaf2f8;
+    padding: 30px;  /* increased padding for larger screens */
+    border-radius: 10px;  /* increased border-radius for larger screens */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nxt {
+    position: fixed;
+    top: 92%;
+    right: 30px;  /* increased the right margin for better visibility on larger screens */
+    transform: translateY(-50%);
+}

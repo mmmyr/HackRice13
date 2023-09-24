@@ -85,6 +85,12 @@ public class UserController {
         return "Physical";
     }
 
+    @GetMapping("/DoYouKnowPage")
+    public String doYouKnowPage(){
+        sleepService.createTable(this.UserName);
+        return "finish";
+    }
+
 
 
     @PostMapping("/saveSleepData")
@@ -170,5 +176,7 @@ public class UserController {
                 .map(Wellness::getScore)
                 .collect(Collectors.toList());
     }
+
+
 
 }
